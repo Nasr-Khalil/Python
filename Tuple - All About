@@ -1,0 +1,88 @@
+## https://www.youtube.com/watch?v=Kes8YRV73Io&list=PLqnslRFeH2UqLwzS0AwKDKLrpYBKzLBy2&index=2
+## tuple are orderd,immutable,allows duplicate elements.
+import timeit
+import sys
+myTuple = ("max", 24, "boston")
+print(myTuple)
+## parenthesis are optional
+myTuple2 = "Nasr", 24, "boston"
+print(myTuple2)
+## if you leave your tuple with only single element, it will be considered as string.
+myTuple3 = "Nasr"
+print(type(myTuple3))
+## to have a tuple with only single element, you should add comma at the end.\
+myTuple4 = "Khalil",
+print(type(myTuple4))  ## now it shows tuple.
+
+mytubel6 = tuple(["max", 28, "boston"])  ## get a tuple from a list.
+print(mytubel6)
+
+## to access a and element in  a tuple.
+
+item = mytubel6[0]  ## if you acceed the range number, it will crash. index starts from 0.you can have negative index.
+print(item)
+## you can not change an element in the Tupl:
+##mytubel6[1] = 45
+print(mytubel6)  ##tuple' object does not support item assignment
+
+## loop a tuple by the following:
+
+for i in mytubel6:  ## your variable can have any name, not only i
+    print(i)
+##############
+## YOU CAN CHECK IF AN ITEM IS IN THE TUPLE, BY USING IF IN ::
+
+if "max" in mytubel6:
+    print("yes")
+else:
+    print("no")
+
+## you can use len function to count tuple items.
+
+print(len(mytubel6))  ## three item are there.
+
+mytubel7 = ("a", "b", "c", "c")
+
+## to check how many times items are repeated:
+
+print((mytubel7.count("c")))  ## 2 C letters are there.
+print((mytubel7.count("a")))
+print((mytubel7.count("f")))
+
+## to get the index of a tupel:
+print(mytubel7.index("b"))  # return 1
+
+## to change a tuple to list:
+
+mylist = list(mytubel7)  ## use list function and pass the tuble name
+print(mylist)
+
+## to have the  tuple back:
+
+mytuble8 = tuple(mylist)  ## Use tuple function and pass the list to it.
+print(mytuble8)
+
+## slice the tuple
+a = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+b = a[2:7]  ## if you didnt provide first index number, it will start from zero index
+print(b)  ## if you didnt provide last index number, it will end to the last index
+## you can step by any number as shown below.
+b = a[2::2]  ## you acn skip by 2, provide second (:)
+print(b)
+
+## how to unpack tuple element:
+mytuble9 = "nasr", 47, "port said"
+name, age, city = mytuble9  ### tuple elemnt count shall match.
+print(name)
+print(age)
+print(city)
+####### Tuple takes small size than list.
+##import sys
+
+my_list=[0, 1, 2, "hello", True]
+my_tuple=[0, 1, 2, "hello", True]
+print(sys.getsizeof(my_list), "bytes")
+print(sys.getsizeof(my_tuple), "bytes")
+## import timeit
+print(timeit.timeit(stmt="[0,1,2,3,4,5]", number= 1000000))
+print(timeit.timeit(stmt="[0,1,2,3,4,5]", number= 1000000))
