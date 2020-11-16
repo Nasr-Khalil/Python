@@ -1,0 +1,50 @@
+class Softwarengineer:
+    ## you have to create a constructor to initialize your attributes, write the following with self inside parameter:
+    def __init__(self, name, age, level, salary):
+        ## the following are called instance attributes, used by the instance (object = instance)
+        self.name = name
+        self.age = age
+        self.level = level
+        self.salary = salary
+
+    ## instance creation by providing the same constructor argument.
+    def code(self, name):
+        return print(f"{self.name} is writing code ...")
+
+    ## create class function/method. you have to write self,
+    # as this refers to the object you work on.
+    ## create second function
+    def codingIn(self, language):  ## function 2
+        print(f"{self.name} is coding in {language} ...")
+
+    def information(self):
+        information = f"name = {self.name},age = {self.age}, level = {self.level}"
+        return information
+
+
+se1 = Softwarengineer("Nasr", 25, "junior", 40000)
+se2 = Softwarengineer("Mona", 23, "Senior", 40000)
+## you can access the instance attribues, using dot function.jjj
+print(se1.name, se1.age, se1.level)
+print(se2.name, se2.age, se2.level)
+print(se1.name, se1.age, se1.salary, se1.level)
+## you can print class method
+se1.code(se1)
+se2.code(se2)
+### call function 2
+se1.codingIn("python")
+se2.codingIn("C++")
+
+### call function 2
+
+print(se1.information())
+print(se2.information())
+#### INFO
+
+##An instance attribute is a Python variable belonging to one, and only one, object.
+# This variable is only accessible in the scope of this object and
+# it is defined inside the constructor function, __init__(self,..) of the class.
+
+##A class attribute is a Python variable that belongs to a class rather than a particular object
+# . It is shared between all the objects of this class and
+# it is defined outside the constructor function, __init__(self,...), of the class.
