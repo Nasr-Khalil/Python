@@ -1,0 +1,74 @@
+# Write Python3 code here
+
+class car():
+
+    # init method or constructor
+    def __init__(self, model, color):
+        self.model = model
+        self.color = color
+
+    def show(self):
+        print("Model is", self.model)
+        print("color is", self.color)
+
+    # both objects have different self which
+
+
+# contain their attributes
+audi = car("audi a4", "blue")
+ferrari = car("ferrari 488", "green")
+
+audi.show()  # same output as car.show(audi)
+ferrari.show()  # same output as car.show(ferrari)
+
+# Behind the scene, in every instance method
+# call, python sends the instances also
+
+# Write Python3 code here
+
+class this_is_class:
+    def show(in_place_of_self):
+        print("we have used another "
+              "parameter name in place of self")
+
+
+object = this_is_class()
+object.show()
+
+##########################################
+
+class Dog:
+    count = 0 # this is a class variable
+    dogs = [] # this is a class variable
+
+    def __init__(self, name):
+        self.name = name #self.name is an instance variable
+        Dog.count += 1
+        Dog.dogs.append(name)
+
+    def bark(self, n): # this is an instance method
+        print("{} says: {}".format(self.name, "woof! " * n))
+
+    def rollCall(n): #this is implicitly a class method (see comments below)
+        print("There are {} dogs.".format(Dog.count))
+        if n >= len(Dog.dogs) or n < 0:
+            print("They are:")
+            for dog in Dog.dogs:
+                print("  {}".format(dog))
+        else:
+            print("The dog indexed at {} is {}.".format(n, Dog.dogs[n]))
+
+########################
+
+class Dog(object):
+    def __init__(self, name):
+        self.name = name
+
+    def bark(self):
+        if self.name == "Doggy":
+            return barking_sound()
+        else:
+            return "yip yip"
+
+    def barking_sound():
+        return "woof woof"
